@@ -43,5 +43,29 @@ const {HOST,USER,PASS} = require('../config/config');
      })
  }
 
+ const sendPassword = function(user){
+     const mailOptions = {
+        from    : USER,
+        to      : user.email,
+        subject : 'forgot password',
+        html    : `
+                <h3>Hello ${user.name}</h3> 
+                <h4>Your Password</h4> ${user.password}`
+     }
+     return new Promise((resolve,reject)=>{
+         transporter.sendMail(mailOptions,function(err,info){
+             if(err){
+                 console.log(err.message);
+                 reject(err);
+             }else{
+                 resolve(info);
+             }
+         })
+     })
+ }
 
- module.exports = mail;
+
+ module.exports = {
+     mail,
+     sendPassword
+    };
