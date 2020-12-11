@@ -43,7 +43,8 @@ const register = async function(req,res){
             /**
              * SEND MAIL 
              */
-            await mail({id:savedUser._id,email:savedUser.email,name:savedUser.name,date:savedUser.createdAt})
+            
+            await mail.mail({id:savedUser._id,email:savedUser.email,name:savedUser.name,date:savedUser.createdAt})
 
             /**
              * SEND RESPONSE
@@ -133,7 +134,7 @@ const login = async function(req,res){
 
                 res.json({
                     error:false,
-                    token:TOKEN,
+                    token:`Bearer ${TOKEN}`,
                     id:user._id
                 })
     
@@ -155,12 +156,72 @@ const login = async function(req,res){
     }
 }
 
+/**
+ * UPDATE PASSWORD
+ */
+
+ const updatePassword = async function(req,res){
+     try{
+        
+        let userCreds = req.user;
+        let oldPassword = req.body.oldPassword;
+        let newPassword = req.body.newPassword;
+
+        let user = await User.findOne({email:userCreds.email});
+
+        // check if the oldPassword is same as the stored Password
+        let isCorrect = await bcrypt.compare(oldPassword,user.password);
+
+        if(isCorrect){
+            //encrypt the new password
+            let hashedPassword = await bcrypt.hash(newPassword,10);
+            //update the user's password
+            await User.findOneAndUpdate({email:user.email},{$set:{password:hashedPassword}},{new:true});
+            res.json({
+                error:false,
+                message:'password updated'
+            })
+
+        }else{
+            throw new Error('password provided is wrong')
+        }
 
 
+     }catch(err){
+         res.json({
+             error:true,
+             message:err.message
+         })
+     }
+ }
 
+ /**
+  * FORGOT PASSWORD
+  */
+ const forgotPassword = async function(req,res){
+     let userMail = req.body.email;
+     try{
+
+        let user = await User.findOne({email:userMail});
+        await mail.sendPassword({email:user.email,name:user.name,password:user.password});
+        res.json({
+            error:false,
+            message:'check your mail'
+        })
+
+     }catch(err){
+         res.json({
+             error:true,
+             message:err.message
+         })
+     }
+
+ }
 
 module.exports = {
     register,
     verify,
-    login
+    login,
+    updatePassword,
+    forgotPassword
 }
