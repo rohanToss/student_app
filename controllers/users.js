@@ -1,7 +1,12 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const mail = require('../utils/mail');
+const jwt = require('jsonwebtoken');
+const { SECRETKEY } = require('../config/config');
 
+/**
+ * REGISTER A NEW USER
+ */
 const register = async function(req,res){
     try{
         /**
@@ -85,11 +90,77 @@ const verify = async function(req,res){
     }
 }
 
+/**
+ * LOGIN THE REGISTERED USER
+ */
+
+const login = async function(req,res){
+    
+    try{
+        
+        let userCreds = req.body;
+
+        // Check if all the required fields are provided
+        if(!userCreds.email || !userCreds.password){
+
+            throw new Error('Please provide email and password')
+
+        }
+        
+        // Check if the user exists
+        let user = await User.findOne({email:userCreds.email});
+        if(!user){
+            throw new Error('wrong credentials');
+        }
+
+        // Check if the user is Verified
+        if(!user.isVerified){
+
+            throw new Error('user is not verified please check inbox to activate the account')
+        
+        }else{
+
+            // Check if the provided password is correct
+            let isCorrect = await bcrypt.compare(userCreds.password,user.password)
+
+            if(isCorrect){
+
+                // Create a JSON web token for the User session
+
+                let TOKEN = jwt.sign({data:user.email}, SECRETKEY,{expiresIn :'1h' });
+
+                // Send Response to USER
+
+                res.json({
+                    error:false,
+                    token:TOKEN,
+                    id:user._id
+                })
+    
+            }else{
+
+                throw new Error('user password incorrect')
+            }
+
+        }
+
+    }catch(err){
+
+        res.json({
+
+            error:true,
+            message:err.message
+
+        })
+    }
+}
+
 
 
 
 
 module.exports = {
     register,
-    verify
+    verify,
+    login
 }
