@@ -1,0 +1,42 @@
+<div>
+  <form [formGroup] = "register" class="example-form" (ngSubmit)="onSubmit()">
+    <!-- Name Input -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Full Name</mat-label>
+      <input matInput placeholder="John Doe." formControlName = "name" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your Email</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName = "email">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your Password</mat-label>
+      <input matInput type="password" placeholder="xxxxxx" formControlName = "password">
+    </mat-form-field>
+
+    <mat-radio-group formControlName="gender">
+      <mat-label>Gender</mat-label>
+      <br>
+      <br>
+      <mat-radio-button value="male">Male</mat-radio-button>
+      <mat-radio-button value="female">Female</mat-radio-button>
+    </mat-radio-group>
+    <br>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your Date of Birth</mat-label>
+      <input matInput type="date" formControlName = "dob">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your Institute </mat-label>
+      <input matInput placeholder="Kalyani Govt. of Engineering" formControlName = "institute">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Register</button>
+
+  </form>
+
+</div>

@@ -1,0 +1,12 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 5rem auto;
+  background-color: whitesmoke;
+  padding:2rem;
+}
+
+.full-width{
+	width: 100%;
+}
