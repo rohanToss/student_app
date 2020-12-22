@@ -13,6 +13,7 @@ import { HomeComponent } from './component/home/home.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { NotesComponent } from './component/notes/notes.component';
 import { ContentComponent } from './component/content/content.component';
+import { NewnoteComponent } from './component/newnote/newnote.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContentComponent } from './component/content/content.component';
     HomeComponent,
     ProfileComponent,
     NotesComponent,
-    ContentComponent
+    ContentComponent,
+    NewnoteComponent,
   ],
   imports: [
     BrowserModule,

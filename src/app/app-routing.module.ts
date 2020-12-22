@@ -6,7 +6,7 @@ import { HomeComponent } from './component/home/home.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { NotesComponent } from './component/notes/notes.component';
 import { ContentComponent } from './component/content/content.component';
-
+import { NewnoteComponent } from './component/newnote/newnote.component';
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'register',component:RegisterComponent},
@@ -14,7 +14,8 @@ const routes: Routes = [
   	children:[
   		{path:'',component:ContentComponent},
   		{path:'profile',component:ProfileComponent},
-  		{path:'notes',component:NotesComponent}
+  		{path:'notes',component:NotesComponent},
+      {path:'notes/new',component:NewnoteComponent}
   ]}
 ];
 
