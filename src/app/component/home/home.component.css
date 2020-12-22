@@ -1,0 +1,15 @@
+.example-container {
+  width: 100%;
+  height: 90%;
+  border: 1px solid #555;
+  background: transparent;
+}
+
+p{
+	text-align: center;
+}
+
+block{
+	display: block;
+	width: 100%;
+}

@@ -8,6 +8,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 const materialComponents = [
   MatButtonModule,
   MatCardModule,
@@ -17,7 +19,8 @@ const materialComponents = [
   MatFormFieldModule,
   MatInputModule,
   MatRadioModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatSidenavModule
 ]
 
 @NgModule({
