@@ -1,1 +1,45 @@
-<button mat-raised-button routerLink="/home/notes">save</button>
+
+<div class="main-div">
+	<!-- <h3> <strong>Add new {{subject}} Note</strong></h3> -->
+	<form [formGroup] = "note" class="form-class" (ngSubmit)="onSubmit()" >
+		 <mat-form-field class="full-width">
+	      <mat-label>Title</mat-label>
+	      <input matInput placeholder="Note Title" formControlName = "title" >
+	    </mat-form-field>
+
+	 	<mat-form-field class="full-width">
+	      <mat-label>Subject</mat-label>
+	      <input matInput placeholder="Note Subject" formControlName = "subject" >
+	    </mat-form-field>
+
+	     <mat-form-field class="full-width">
+	      <mat-label>Content</mat-label>
+	      <textarea matInput placeholder="Note Content" formControlName="content"></textarea>
+	    </mat-form-field>
+
+	    <mat-form-field class="full-width">
+	    	<mat-label>Video Url</mat-label>
+	    	<input matInput placeholder="reference video url" formControlName="video_url">
+	    </mat-form-field>
+
+
+	    <mat-form-field class="full-width">
+	    	<mat-label>Reference Url</mat-label>
+	    	<input matInput placeholder="reference url" formControlName="reference_url">
+	    </mat-form-field>
+
+	    <p><label>Add Image</label>
+	    </p>
+	    <input  type="file" formControlName="image">
+	    <br>
+	    <br>
+	    <button type="submit" mat-stroked-button color="primary">Add</button>
+	    <button type="button" mat-stroked-button (click)="onReset()" color="warn">Reset</button>
+	    <button type="button" mat-stroked-button (click)="onCancel()" >Cancel</button>
+
+
+
+	</form>	
+		<!-- <button class="back-button" mat-raised-button routerLink="/home/notes">Back</button> -->
+
+</div>

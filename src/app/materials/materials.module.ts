@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const materialComponents = [
   MatButtonModule,
@@ -20,7 +21,8 @@ const materialComponents = [
   MatInputModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatDialogModule
 ]
 
 @NgModule({

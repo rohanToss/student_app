@@ -1,0 +1,12 @@
+.add-note{
+	background: blue;
+	position: fixed;
+	bottom: 60px;
+	right: 60px;
+	z-index: 5;
+}
+
+mat-card{
+	width: 50%;
+	margin: 0 auto;
+}

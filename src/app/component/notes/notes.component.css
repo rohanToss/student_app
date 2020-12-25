@@ -1,3 +1,11 @@
-.spacer{
-	flex: 1 1 auto;
+
+.mat-add-button{
+	top: 443px;
 }
+
+mat-card{
+	width: 50%;
+	margin: 10px auto;
+}
+
+

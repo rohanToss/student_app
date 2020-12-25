@@ -14,6 +14,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { NotesComponent } from './component/notes/notes.component';
 import { ContentComponent } from './component/content/content.component';
 import { NewnoteComponent } from './component/newnote/newnote.component';
+import { NotedataComponent } from './component/notedata/notedata.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NewnoteComponent } from './component/newnote/newnote.component';
     NotesComponent,
     ContentComponent,
     NewnoteComponent,
+    NotedataComponent,
   ],
   imports: [
     BrowserModule,
