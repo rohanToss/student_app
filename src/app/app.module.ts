@@ -15,6 +15,11 @@ import { NotesComponent } from './component/notes/notes.component';
 import { ContentComponent } from './component/content/content.component';
 import { NewnoteComponent } from './component/newnote/newnote.component';
 import { NotedataComponent } from './component/notedata/notedata.component';
+import { ProfileupdateComponent } from './component/profileupdate/profileupdate.component';
+import { AchievementsComponent } from './component/achievements/achievements.component';
+import { CertificatesComponent } from './component/certificates/certificates.component';
+import { AssignmentComponent } from './component/assignment/assignment.component';
+import { NewassignmentComponent } from './component/newassignment/newassignment.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,13 @@ import { NotedataComponent } from './component/notedata/notedata.component';
     ContentComponent,
     NewnoteComponent,
     NotedataComponent,
+    ProfileupdateComponent,
+    AchievementsComponent,
+    CertificatesComponent,
+    AssignmentComponent,
+    NewassignmentComponent,
   ],
+  entryComponents:[ProfileupdateComponent,AchievementsComponent,CertificatesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

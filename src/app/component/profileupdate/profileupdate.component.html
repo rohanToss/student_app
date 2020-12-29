@@ -1,0 +1,27 @@
+<div>
+	<h3 mat-dialog-title>Update User</h3>
+	<div mat-dialog-content>
+		<form class="form-class" [formGroup]="updatedUser" (ngSubmit)="onSubmit()">
+			
+			<mat-form-field class="full-width">
+				<mat-label>Full Name</mat-label>
+				<input matInput placeholder="John Doe" formControlName="name">
+			</mat-form-field>
+
+			<mat-form-field class="full-width">
+				<mat-label>Institute</mat-label>
+				<input matInput placeholder="Kalyani Government Engineering College" formControlName="institute">
+			</mat-form-field>
+
+			<mat-form-field class="full-width">
+      			<mat-label>Enter your Date of Birth</mat-label>
+      			<input matInput type="date" formControlName = "dob">
+    		</mat-form-field>
+
+
+			<button class="update-button" type="submit" mat-raised-button color="primary">Update</button>
+			<button type="button" mat-stroked-button mat-dialog-close>close</button>		
+		</form>
+	</div>
+
+</div>

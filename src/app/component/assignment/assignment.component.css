@@ -1,0 +1,13 @@
+.add-new{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	z-index: 5;
+}
+.content{
+	margin-top: 3rem;
+}
+mat-card{
+	width: 80%;
+	margin: 0 auto;
+}

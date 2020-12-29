@@ -1,0 +1,13 @@
+.heading{
+	text-align: center;
+}
+.full-width{
+	width: 100%;
+}
+form{
+	width: 80%;
+	margin: 0 auto;
+}
+button{
+	margin-right: 1rem;
+}

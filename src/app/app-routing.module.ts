@@ -8,7 +8,7 @@ import { NotesComponent } from './component/notes/notes.component';
 import { ContentComponent } from './component/content/content.component';
 import { NewnoteComponent } from './component/newnote/newnote.component';
 import { NotedataComponent } from './component/notedata/notedata.component';
-
+import { AssignmentComponent } from './component/assignment/assignment.component';
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'register',component:RegisterComponent},
@@ -16,6 +16,7 @@ const routes: Routes = [
   	children:[
   		{path:'',component:ContentComponent},
   		{path:'profile',component:ProfileComponent},
+      {path:'assignment',component:AssignmentComponent},
   		{path:'notes',component:NotesComponent,
         children:[
           {path:':id/data',component:NotedataComponent},

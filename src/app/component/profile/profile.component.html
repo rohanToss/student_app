@@ -1,5 +1,44 @@
-<div>
+<!-- <div>
 	<mat-card style="width: 60%; margin: 1rem auto">
 	<h1 style="text-align: center;">Profile Content</h1>
 </mat-card>
+</div>
+ -->
+<div style="margin-top: 20px;">
+	<mat-card style="width: 80%; margin: 0 auto; display: flex">
+		<div style="width: 100px; text-align: center;/* border: 2px solid red;/*">
+			<p>
+				<img src="../../assets/download.jpg" style="border-radius: 50%; width: 100px;">		
+			</p>
+			<p>
+				<button mat-stroked-button color="primary">Edit</button>	
+			</p>
+			
+		</div>
+		<div style="/*border: 2px solid black;*/ width: 400px;margin-left: 1rem;">
+			<span>	Name</span><h3> <strong>	Sovick Konar</strong> </h3>
+			<span>	Gender </span> 	<h3>	<strong>	Male</strong></h3>
+			<span>	Institute</span><h3>	<strong>	Kalyani Government Engineering College</strong></h3>
+		</div>
+		
+	<button class="update-button" mat-raised-button color="warn" (click)=openUpdate()>Update</button>
+
+	</mat-card>
+</div>
+
+
+<div style="margin-top: 20px;">
+	
+	<mat-card style="width: 80%; margin: 0 auto">
+		<mat-grid-list cols="3" rowHeight="3:1">
+  			<mat-grid-tile>No.of Posts: 34</mat-grid-tile>
+  			<mat-grid-tile>
+	  					<button mat-stroked-button color="warn" (click)="onAchieve()">Acheivements</button>	
+  			</mat-grid-tile>
+  			<mat-grid-tile>
+  				<button mat-stroked-button color="primary" (click)="onCertificate()" >Certificates</button>
+  			</mat-grid-tile>
+		</mat-grid-list>
+	</mat-card>
+
 </div>

@@ -1,0 +1,12 @@
+.full-width {
+  width: 100%;
+}
+
+.form-class{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.update-button{
+	margin-right: 1rem;
+}

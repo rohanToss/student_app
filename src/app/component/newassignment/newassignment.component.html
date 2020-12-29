@@ -1,0 +1,29 @@
+<div>
+	<h2 mat-dialog-title class="heading">New Assignment</h2>
+	<form [formGroup]="assignment" (ngSubmit)="onSubmit()">
+		<mat-form-field class="full-width">
+			<mat-label>Assignment Title</mat-label>
+			<input matInput placeholder="Write a program ..." formControlName="title">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<mat-label>Assignment Description</mat-label>
+			<textarea matInput placeholder="The output should be in an array format" formControlName="description"></textarea>
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<mat-label>Submission Date</mat-label>
+			<input matInput type="date" formControlName="submissiondate">
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<mat-label>Teacher's Email</mat-label>
+			<input matInput type="email" formControlName="teacheremail">
+		</mat-form-field>
+
+
+		<button type="submit" mat-stroked-button color="primary">submit</button>
+		<button type="button" (click)="onReset()" mat-stroked-button color="warn" >Reset</button>
+		<button type="button" mat-dialog-close mat-stroked-button>Close</button>
+	</form>
+</div>
